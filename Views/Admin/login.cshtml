@@ -1,0 +1,18 @@
+@Html.Partial("~/Views/Home/_header.cshtml");
+<div id="login-form" class="login-form">
+    <h4><span><b>Login</b> Form</span></h4>
+    <form class="search-form" action="/Admin/SP" method="post">
+        <div class="search-fields">
+            @*@Html.TextBoxFor(m => m.Name)*@
+            <input name="username" type="email" placeholder="Email / Username" />
+        </div>
+        <div class="search-fields">
+            @*@Html.PasswordFor(m => m.Password)*@
+            <input name="pass" placeholder="Password" type="password"/>
+        </div>
+        <div class="search-button-container">
+            <input class="btn btn-sm colored" value="Login" type="submit"/>
+        </div>
+    </form>
+</div>
+@Html.Partial("~/Views/Home/_footer.cshtml");

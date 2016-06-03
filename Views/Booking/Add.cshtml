@@ -1,0 +1,43 @@
+﻿@Html.Partial("~/Views/Home/_header.cshtml");
+@model IEnumerable<MarriageHall.Models.Booking>
+<h2>Add_booking</h2>
+
+<div id="login-form" class="login-form">
+    
+    <form class="search-form" action="/Booking/Add_booking" method="post">
+        <div class="row">
+            <div class="field-container col-xs-6 col-md-4">
+                <input type="text" name="fname" placeholder="First Name *">
+            </div>
+            <div class="field-container col-xs-6 col-md-4">
+                <input type="text" name="lname" placeholder="Last Name *">
+            </div>
+            <div class="field-container col-xs-12 col-md-4">
+                <input type="email" name="email" placeholder="Email *">
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="field-container col-xs-6 col-md-4">
+                <input type="tel" name="phone" placeholder="Phone *">
+            </div>
+            <div class="field-container col-xs-6 col-md-4">
+                <input type="text" name="city" placeholder="City">
+            </div>
+            <div class="field-container col-xs-12 col-md-4">
+                <input type="email" name="address" placeholder="Address">
+            </div>
+
+        </div>
+        
+        <div class="terms-condition">
+            <input type="checkbox" class="checkbox" id="terms">
+            <label for="terms" class="sm"><span></span></label>
+            I have read and accept the terms and conditions. 
+        </div>
+        <div class="search-button-container">
+            <input class="btn btn-sm colored" value="Confirm" type="submit" />
+        </div>
+    </form>
+</div>
+@Html.Partial("~/Views/Home/_footer.cshtml");

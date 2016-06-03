@@ -1,0 +1,37 @@
+﻿@Html.Partial("~/Views/Home/_header.cshtml");
+@model IEnumerable<MarriageHall.Models.Booking>
+<h2>View All Bookings</h2>
+
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>City</td>
+        <td>Address</td>
+        <td>Date</td>
+    </tr>
+
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.Id</td>
+            <td>@s.FirstName</td>
+            <td>@s.LastName</td>
+            <td>@s.Email</td>
+            <td>@s.Phone</td>
+            <td>@s.City</td>
+            <td>@s.Address</td>
+            <td>@s.Date</td>
+
+            <td>
+                <a href="/Booking/Edit_Booking/@s.Id">Edit</a>
+                <a href="/Booking/Delete_booking/@s.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+@Html.Partial("~/Views/Home/_footer.cshtml");
