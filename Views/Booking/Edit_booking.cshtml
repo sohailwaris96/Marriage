@@ -1,0 +1,43 @@
+﻿@Html.Partial("~/Views/Home/_header.cshtml");
+@model MarriageHall.Models.Booking
+
+<h2>Edit_booking</h2>
+<div id="login-form" class="login-form">
+<form class="search-form" action="/Booking/Edit_booking_Now/@Model.Id" method="post" >
+                <div class=row> 
+                    <div class="field-container col-xs-6 col-md-4"> 
+                        <input type=text name="fname" value="@Model.FirstName" ">
+
+                    </div> 
+                    <div class="field-container col-xs-6 col-md-4"> 
+                        <input type=text name="lname" value="@Model.LastName" >
+
+                    </div> 
+                    <div class="field-container col-xs-12 col-md-4"> 
+                        <input type=email name="email" value="@Model.Email" >
+
+                    </div> 
+
+                </div> 
+                <div class=row> 
+                    <div class="field-container col-xs-6 col-md-4"> 
+                        <input type=tel name="phone" value="@Model.Phone" >
+
+                    </div> 
+                    <div class="field-container col-xs-6 col-md-4"> 
+                        <input type=text name="city" value="@Model.City" >
+
+                    </div> 
+                    <div class="field-container col-xs-12 col-md-4"> 
+                        <input type=text name="address" value="@Model.Address">
+
+                    </div> 
+
+                </div> 
+                
+                <div class="search-button-container">
+            <input class="btn btn-sm colored" value="Update" type="submit"/>
+        </div>
+            </form>
+</div>
+@Html.Partial("~/Views/Home/_footer.cshtml");

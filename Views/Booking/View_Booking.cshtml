@@ -1,0 +1,52 @@
+﻿@Html.Partial("~/Views/Home/_header.cshtml");
+@model IEnumerable<MarriageHall.Models.Booking>
+
+<section id="internal-title" class="container" data-background="parallax">
+    <h1>View All Bookings</h1>
+    <!-- Internal Page Main titles -->
+    <ol class="breadcrumb">
+        <!-- Internal Page Breadcrumb -->
+        <li><a href="~/Admin/Admin_Home">Admin Home</a></li>
+        <li class="active">View All Bookings</li>
+    </ol>
+
+</section>
+<div class="login-form">
+    <table border="3"  align="center">
+        <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>City</td>
+            <td>Address</td>
+            <td>Date</td>
+        </tr>
+
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.Id</td>
+                <td>@s.FirstName</td>
+                <td>@s.LastName</td>
+                <td>@s.Email</td>
+                <td>@s.Phone</td>
+                <td>@s.City</td>
+                <td>@s.Address</td>
+                <td>@s.Date</td>
+
+                <td>
+                    <div class="search-button-container">
+                        <a href="/Booking/Edit_Booking/@s.Id">
+                            <input class="btn btn-sm colored" value="Edit" /></a>
+                        <a href="/Booking/Delete_booking/@s.Id">
+                            <input class="btn btn-sm colored" value="Delete" /></a>
+                    </div>
+                    
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+@Html.Partial("~/Views/Home/_footer.cshtml");

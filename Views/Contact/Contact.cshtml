@@ -1,0 +1,76 @@
+@Html.Partial("~/Views/Home/_header.cshtml");
+
+@model IEnumerable<MarriageHall.Models.Contact>
+
+<section id=internal-title class=container data-background=parallax> 
+    <h1>Contact Us</h1><!-- Internal Page Main titles --> 
+    <ol class=breadcrumb><!-- Internal Page Breadcrumb --> 
+        <li><a href="~/Home/Index">Home</a></li> 
+        <li class=active>Contact Us</li> 
+
+    </ol> 
+
+</section> <!-- End of Internal Page Main titles boxes --> 
+
+<section id=contact-page class=container> 
+    <h3><span><b>Contact</b> Information</span></h3> 
+    <div class=contact-desc> 
+        <ul><p> It was a wonderfull experience having you here with us. We hope that you have also loved it as well. Moreover, if you want more of our information you can contact us on details given below. <b>THANK YOU VERY MUCH FOR VISITING HERE.. </b></p> </ul>
+
+    </div> 
+    @foreach(var s in Model)
+{
+    <div class="contact-info clearfix"> 
+        <div class=contact-info-contnet> 
+            <div class="location col-md-4 col-xs-4">@s.Address </div> 
+            <div class="phone col-md-4 col-xs-4">@s.Phone  </div> 
+            <div class="email col-md-4 col-xs-4"> @s.Email
+                
+            </div> 
+
+        </div> 
+
+    </div> 
+}
+<section id=google-map class=col-md-4> 
+    <div id=map></div> 
+
+</section> 
+
+<div class="contact-us-content col-md-8"> 
+    <form id=contact-form name=contact-form action="/Contact/Mail"> 
+        <div class=row> 
+            <div class="name-field col-md-6 col-xs-6"> 
+                <input type=text id=name-field name=name-field placeholder="Name *" required>
+
+            </div> 
+            <div class="email-field col-md-6 col-xs-6"> 
+                <input type=email id=email-field name=email-field placeholder="Email *" required>
+
+            </div> 
+
+        </div> 
+        <div class=row> 
+            <div class="phone-field col-md-6 col-xs-6"> 
+                <input type=tel name=phone-field placeholder=Phone>
+
+            </div> 
+            <div class="website-field col-md-6 col-xs-6"> 
+                <input type=url id=company-field name=company-field placeholder=Company>
+
+            </div> 
+
+        </div> 
+        <div class="message-field row"> 
+            <textarea name=message-field id=message-field placeholder="Message *" required></textarea>
+            <input type=submit class="contact-submit btn colored" value=Send>
+
+        </div> 
+
+    </form> 
+
+</div> 
+
+</section> 
+
+@Html.Partial("~/Views/Home/_footer.cshtml");
